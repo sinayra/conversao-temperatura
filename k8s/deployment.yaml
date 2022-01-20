@@ -17,8 +17,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: conversao-temperatura-deploy
-  labels:
-    app: conversao-temperatura
 spec:
   replicas: 2
   selector:
