@@ -26,11 +26,12 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          labels: |
+          tags: |
             sinayra/conversao-temperatura:v${{ env.GITHUB_RUN_NUMBER }}
             sinayra/conversao-temperatura:latest
             
   CD:
+    needs: [ CI ]
     runs-on: ubuntu-latest
     steps:
       - name: Get latest version of repository
